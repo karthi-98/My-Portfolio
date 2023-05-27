@@ -1,11 +1,35 @@
+import { useEffect, useState } from "react";
 import { icons } from "../../Constants/constants";
 
 const Navigation = () => {
   const classNameA =
     "text-base text-text font-medium py-2 px-3  hover:bg-gradient-to-tr hover:from-gradientyfrom hover:to-yellow rounded-lg";
 
+  const [ScrollDirection, setScrollDirection] = useState("");
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    function updateScrollDirection() {
+      const scrollY = window.scrollY;
+      const direction = scrollY < lastScrollY ? "down" : "up";
+      if (
+        direction != ScrollDirection &&
+        (scrollY - lastScrollY > 5 || scrollY - lastScrollY < -5)
+      ) {
+        setScrollDirection(direction);
+      }
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+    }
+    window.addEventListener("scroll", updateScrollDirection);
+    return () => window.removeEventListener("scroll", updateScrollDirection);
+  }, [ScrollDirection]);
+
   return (
-    <header className=" px-6 py-4 flex justify-between items-center font-jost">
+    <header
+      className={`px-6 py-4 flex justify-between items-center font-jost sticky transition-all duration-300 ${
+        ScrollDirection === "down" ? "top-0 bg-white shadow-md" : "-top-24"
+      } `}
+    >
       <h1 className="text-2xl text-text font-medium">My Portfolio</h1>
       <nav className="flex gap-2">
         <a className={`${classNameA}`} href="#">

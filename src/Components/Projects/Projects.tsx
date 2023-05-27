@@ -3,20 +3,6 @@ import ProjectCard from "./ProjectCard";
 import profileData from "../../profileData.json";
 
 const Projects = () => {
-  const projectCartDetails = [
-    {
-      role: "Automation Tester",
-      date: "Jan 2021 - April 2021",
-      descriptionNo: 1,
-    },
-    { role: "Manual Tester", date: "May 2021 - Sept 2021", descriptionNo: 2 },
-    {
-      role: "Back-end Application Developer",
-      date: "Oct 2021 - Nov 2022",
-      descriptionNo: 3,
-    },
-  ];
-
   return (
     <div
       id="profExp"
