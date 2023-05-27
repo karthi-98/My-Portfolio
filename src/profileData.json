@@ -1,0 +1,37 @@
+{
+  "walmart": [
+    {
+      "role": "Automation Tester",
+      "date": "Jan 2021 - April 2021",
+      "description": [
+        "Role Desc1",
+        "Role Desc1",
+        "Role Desc1",
+        "Role Desc1",
+        "Role Desc1"
+      ]
+    },
+    {
+      "role": "Manual Tester",
+      "date": "May 2021 - Sept 2021",
+      "description": [
+        "Role Desc1",
+        "Role Desc1",
+        "Role Desc1",
+        "Role Desc1",
+        "Role Desc1"
+      ]
+    },
+    {
+      "role": "Back-End Application Developer",
+      "date": "Oct 2021 - Nov 2022",
+      "description": [
+        "Role Desc1",
+        "Role Desc1",
+        "Role Desc1",
+        "Role Desc1",
+        "Role Desc1"
+      ]
+    }
+  ]
+}
