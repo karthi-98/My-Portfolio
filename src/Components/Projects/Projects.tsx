@@ -12,7 +12,7 @@ const Projects = () => {
         Overall &nbsp;
         <span className="font-dancing text-[2.2rem] font-bold">Experience</span>
       </h1>
-      <section className="grid grid-cols-2 justify-center pt-2">
+      <section className="grid grid-cols-2 justify-center pt-2 mobile:grid-cols-1">
         <img src={images.exp} className="h-[15rem]" alt="Experience logo" />
         <aside className="pt-[1rem]">
           <h1 className="w-[25rem] leading-10 text-center">
@@ -30,24 +30,23 @@ const Projects = () => {
         <h1 className="pt-2">Companies I worked on : </h1>
         <img src={images.wipro} className="h-12" alt="Wipro logo" />
       </section>
-      <section className=" py-10 px-10 mx-3 flex flex-col gap-8">
-        <div className=" flex gap-2">
+      <section className=" py-10 px-10 mx-3 flex flex-col gap-8 items-center">
+        <div className=" flex gap-2 justify-center">
           <img src={images.wipro} className="h-14" alt="Wipro logo" />
           <span className="pt-2 text-center text-[2rem]  font-jost font-light">
             Experience
           </span>
         </div>
-        <div className="flex items-center text-[1.1rem]">
-          Project :
-          <h1 className="bg-yellow px-3 py-1 ml-2 rounded-lg font-bold">
-            Walmart
-          </h1>
-          <h1 className="bg-[#ffee32] text-[#4f4a10] px-3 py-2 ml-2 rounded-lg text-sm font-bold">
-            2 Yrs
-          </h1>
+        <div className="flex justify-center">
+          <div className="flex justify-center w-fit py-2 rounded-lg items-center text-[1.1rem] tracking-wide">
+            <h1>Project : </h1>
+            <h1 className="bg-[#fff] py-1 ml-2 rounded-lg font-medium font-jost flex underline underline-offset-4">
+              Walmart - <p className="pl-2">2 Yrs</p>
+            </h1>
+          </div>
         </div>
-        <div className="flex gap-8">
-          {profileData.walmart.map((project, index) => (
+        <div className="flex gap-8 mobile:flex-col">
+          {profileData.walmart.map((project) => (
             <ProjectCard
               role={project.role}
               date={project.date}
@@ -55,6 +54,13 @@ const Projects = () => {
             />
           ))}
         </div>
+        <section className="font-bold text-3xl flex items-center mobile:flex-col mobile:gap-3 pt-8">
+          🏆
+          <strong className="text-lg pl-2 bg-gradient-to-r from-gradientyfrom via-[#839700] to-gradientyfrom text-transparent bg-clip-text mobile:text-center">
+            "Bright Beginners" of Ideas A1 Championship League Awards - April
+            2022
+          </strong>
+        </section>
       </section>
     </div>
   );

@@ -32,7 +32,7 @@ const Education = () => {
         <span className="text-yellow font-bold"> Education </span>
         Details
       </h1>
-      <div className="flex justify-center gap-14">
+      <div className="flex justify-center gap-14 mobile:flex-col mobile:px-5">
         {education.map((item) => (
           <section className="flex flex-col gap-4 bg-white px-8 py-5 rounded-lg transition-all duration-300 shadow-[8px_8px_0_-1px_#ffed27] hover:shadow-[12px_12px_0_-1px_#ffed27]">
             <p className="font-bold text-[1.1rem]">{item.edu}</p>

@@ -3,18 +3,18 @@ import Button from "../../StyledComps/Button";
 
 const Home = () => {
   return (
-    <main id="#" className="flex gap-8 h-[75vh] py-[7vh] justify-center">
-      <aside className="w-[75vw] rounded-[40px] flex gap-32 items-center justify-center">
-        <section className="font-dancing text-black px-16 py-16  w-[35vw] flex flex-col h-full justify-between items-center gap-8">
+    <main id="#" className="flex h-fit pt-[3rem] flex-col items-center">
+      <aside className="flex items-center justify-center mobile:flex-col-reverse">
+        <section className="font-dancing text-black p-16 flex flex-col h-full items-center gap-8 mobile:p-[3rem]">
           <p className="text-3xl">
             I'm <span className="font-extrabold text-4xl">Karthick</span>
           </p>
-          <p className="font-poppins  text-center leading-9 [word-spacing:3px]">
+          <p className="font-jost text-center leading-9 [word-spacing:2.5px] w-[30rem] mobile:w-fit text-[1.1rem]">
             As a software developer, I am a versatile problem solver who crafts
             elegant and efficient code, transforming complex ideas into
             functional and user-friendly applications.
           </p>
-          <section className="flex gap-5 items-center">
+          <section className="flex gap-5 items-center ">
             <Button
               onClick={() =>
                 (window.location.href = "mailto:karthi.98p@gmail.com")
@@ -43,8 +43,28 @@ const Home = () => {
             />
           </section>
         </section>
-        <img src={images.myimg} className="h-4/5 rounded-lg shadow-2xl" />
+        <div className="flex justify-center h-[20rem] mobile:h-[12rem] mobile:w-full">
+          <img
+            src={images.myimg}
+            className="rounded-lg shadow-2xl bg-black/40 mobile:h-[12rem] mobile:w-[10rem] object-cover"
+          />
+        </div>
       </aside>
+      <section className="flex items-center gap-4 bg-black/5 w-full justify-center py-10 mt-8 mobile:flex-col mobile:gap-7">
+        <img src={images.aws} className="h-[8rem]" />
+        <aside className="flex flex-col gap-3 font-jost ">
+          <h1>
+            Validation Number:
+            <span className="font-medium">J4C79FMKTBR11C3Y</span>
+          </h1>
+          <p>
+            Issue date: <span className="font-medium">March 3, 2023</span>
+          </p>
+          <p>
+            Expiry date : <span className="font-medium">March 3, 2026</span>
+          </p>
+        </aside>
+      </section>
     </main>
   );
 };

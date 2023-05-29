@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
-import { icons } from "../../Constants/constants";
+import { AnimatePresence, motion, useCycle } from "framer-motion";
 
 const Navigation = () => {
-  const classNameA =
-    "text-base text-text font-medium py-2 px-3  hover:bg-gradient-to-tr hover:from-gradientyfrom hover:to-yellow rounded-lg";
+  const [mobileOpen, setmobileOpen] = useCycle(false, true);
 
+  const classNameA =
+    "text-base text-text font-medium py-2 px-3  hover:bg-gradient-to-tr hover:from-gradientyfrom hover:to-yellow rounded-lg mobile:text-lg";
+
+  const mobile =
+    "mobile:flex mobile:flex-col mobile:absolute mobile:-top-[2.6rem] mobile:left-0 mobile:pl-5 mobile:pt-5 mobile:gap-5";
   const [ScrollDirection, setScrollDirection] = useState("");
 
   useEffect(() => {
@@ -30,27 +34,25 @@ const Navigation = () => {
         ScrollDirection === "down" ? "top-0 bg-white shadow-md" : "-top-24"
       } `}
     >
-      <h1 className="text-2xl text-text font-medium">My Portfolio</h1>
-      <nav className="flex gap-2">
-        <a className={`${classNameA}`} href="#">
-          Home
-        </a>
-        <a className={`${classNameA}`} href="#skills">
-          Skills
-        </a>
-        <a className={`${classNameA}`} href="#profExp">
-          Prof. Exp
-        </a>
-        <a className={`${classNameA}`} href="#education">
-          Education
-        </a>
-        <a className={`${classNameA}`} href="#contact">
-          Contact
-        </a>
-        <a className={`${classNameA}`} href="#aboutsite">
-          About Site
-        </a>
-      </nav>
+      <h1 className="text-xl text-text font-medium mobile:text-lg">
+        My Portfolio
+      </h1>
+      {mobileOpen && (
+        <nav className={`flex gap-2 ${mobile}`}>
+          <a className={`${classNameA}`} href="#">
+            Home
+          </a>
+          <a className={`${classNameA}`} href="#skills">
+            Skills
+          </a>
+          <a className={`${classNameA}`} href="#profExp">
+            Prof. Exp
+          </a>
+          <a className={`${classNameA}`} href="#education">
+            Education
+          </a>
+        </nav>
+      )}
       <section
         onClick={(e) => {
           e.preventDefault();
@@ -62,10 +64,31 @@ const Navigation = () => {
         className="flex gap-3 rounded-md bg-gradient-to-tr from-gradientyfrom to-yellow cursor-pointer px-4 py-2 items-center hover:border-solid"
       >
         <h1 className="text-black text-sm font-medium">Download Resume</h1>
-        {/* <section className="p-2 w-13  bg-bgs rounded-full">
-          <img src={icons.download} width="8px" />
-        </section> */}
       </section>
+      <div>
+        <button
+          className="hidden mobile:block mobile:z-10"
+          onClick={() => setmobileOpen()}
+        >
+          {mobileOpen ? (
+            <h1 className="z-10">Close</h1>
+          ) : (
+            <h1 className="z-10">Open</h1>
+          )}
+        </button>
+        <AnimatePresence>
+          {mobileOpen && (
+            <motion.div
+              transition={{ stiffness: 1 }}
+              variants={{ open: { x: "0%" }, closed: { x: "-100%" } }}
+              animate="open"
+              initial="closed"
+              exit="closed"
+              className=" fixed -z-10 -top-10 left-0 w-screen h-screen bg-yellow"
+            ></motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </header>
   );
 };
