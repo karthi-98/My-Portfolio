@@ -11,16 +11,15 @@ type projectCardMain = {
 const ProjectCardMain = (props: projectCardMain) => {
   const zoomIn = {
     hidden: {
-      // y: "-100vh",
-      scale: 0,
-      opacity: 0,
+      x: "-100vw",
     },
     visible: {
-      // y: "0",
-      scale: 1,
-      opacity: 1,
+      x: "0",
+      transition: {
+        damping: 1,
+      },
     },
-    exit: { scale: 0, opacity: 0 },
+    exit: { x: "100vw" },
   };
 
   return (
@@ -29,7 +28,7 @@ const ProjectCardMain = (props: projectCardMain) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       onClick={props.onClick}
-      className={`absolute top-0 left-0 backdrop-blur-md bg-black/70  w-full h-[2350px] flex items-center justify-center mobile:h-[4190px]`}
+      className={`absolute top-0 left-0 backdrop-blur-md bg-black/70  w-full h-[2630px] flex items-center justify-center mobile:h-[4630px]`}
     >
       <motion.div
         variants={zoomIn}

@@ -3,11 +3,19 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <div className="h-[3px] bg-black"></div>
-      <footer className="h-[2rem] bg-gradient-to-tr from-gradientyfrom to-yellow py-6 flex justify-center items-center">
-        <h1 className="font-jost text-[#000]">
-          Handcrafted with<span className="text-[#ff2929] text-xl"> ♥ </span>by
-          karthick
+      <footer className="h-fit py-6 flex flex-col justify-center items-center">
+        <h1 className="font-jost my-4">
+          Site hosted in <span className="text-gradientyfrom">AWS</span>
+        </h1>
+        <h1 className="font-jost text-[#fff] flex items-center">
+          Build using
+          <span className="font-medium text-2xl mx-2 pb-1 text-gradientyfrom font-dancing">
+            ReactJS
+          </span>
+          and handcrafted by
+          <span className="font-medium pl-1 text-2xl mx-2 pb-1 text-gradientyfrom font-dancing">
+            Karthick
+          </span>
         </h1>
       </footer>
     </>

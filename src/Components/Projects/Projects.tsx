@@ -1,6 +1,6 @@
 import { images } from "../../Constants/constants";
 import ProjectCard from "./ProjectCard";
-import profileData from "../../profileData.json";
+import data from "../../data.json";
 
 const Projects = () => {
   return (
@@ -13,7 +13,11 @@ const Projects = () => {
         <span className="font-dancing text-[2.2rem] font-bold">Experience</span>
       </h1>
       <section className="grid grid-cols-2 justify-center pt-2 mobile:grid-cols-1">
-        <img src={images.exp} className="h-[15rem]" alt="Experience logo" />
+        <img
+          src={images.exp}
+          className="h-[15rem] mobile:pl-10"
+          alt="Experience logo"
+        />
         <aside className="pt-[1rem]">
           <h1 className="w-[25rem] leading-10 text-center">
             I have
@@ -46,7 +50,7 @@ const Projects = () => {
           </div>
         </div>
         <div className="flex gap-8 mobile:flex-col">
-          {profileData.walmart.map((project) => (
+          {data["Wipro Exp"].walmart.map((project: any) => (
             <ProjectCard
               role={project.role}
               date={project.date}

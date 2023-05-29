@@ -3,7 +3,7 @@ import Button from "../../StyledComps/Button";
 
 const Home = () => {
   return (
-    <main id="#" className="flex h-fit pt-[3rem] flex-col items-center">
+    <main id="home" className="flex h-fit pt-[3rem] flex-col items-center">
       <aside className="flex items-center justify-center mobile:flex-col-reverse">
         <section className="font-dancing text-black p-16 flex flex-col h-full items-center gap-8 mobile:p-[3rem]">
           <p className="text-3xl">
@@ -23,6 +23,7 @@ const Home = () => {
               Contact Me
             </Button>
             <img
+              alt="Github"
               onClick={() =>
                 window.open("https://github.com/karthi-98", "_blank")
               }
@@ -30,6 +31,7 @@ const Home = () => {
               className="cursor-pointer transition duration-200 hover:scale-110 w-7 h-7"
             />
             <img
+              alt="Linkedln"
               onClick={() =>
                 window.open(
                   "https://www.linkedin.com/in/karthick-p-878063130/",
@@ -45,17 +47,22 @@ const Home = () => {
         </section>
         <div className="flex justify-center h-[20rem] mobile:h-[12rem] mobile:w-full">
           <img
+            alt="karthick"
             src={images.myimg}
             className="rounded-lg shadow-2xl bg-black/40 mobile:h-[12rem] mobile:w-[10rem] object-cover"
           />
         </div>
       </aside>
       <section className="flex items-center gap-4 bg-black/5 w-full justify-center py-10 mt-8 mobile:flex-col mobile:gap-7">
-        <img src={images.aws} className="h-[8rem]" />
+        <img
+          alt="AWS Cloud Practitioner Certificate"
+          src={images.aws}
+          className="h-[8rem]"
+        />
         <aside className="flex flex-col gap-3 font-jost ">
           <h1>
             Validation Number:
-            <span className="font-medium">J4C79FMKTBR11C3Y</span>
+            <span className="font-medium"> J4C79FMKTBR11C3Y</span>
           </h1>
           <p>
             Issue date: <span className="font-medium">March 3, 2023</span>
@@ -70,5 +77,3 @@ const Home = () => {
 };
 
 export default Home;
-
-//bg-gradient-to-b from-[#7AE2D7] to-[#7AE2D7]
