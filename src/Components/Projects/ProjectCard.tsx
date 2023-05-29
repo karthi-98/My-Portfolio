@@ -11,19 +11,17 @@ type projectCard = {
 };
 
 const ProjectCard: React.FC<projectCard> = ({ role, date, description }) => {
-  // const [scrollLock, toggle] = useScrollLock();
   const [isOpen, setisOpen] = useState(false);
-  const [scrollLock, setScrollLock] = useState(false);
 
-  const functionCALL = () => {
-    if (scrollLock) {
-      document.body.style.overflowY = "auto";
-    } else {
-      document.body.style.overflowY = "hidden";
-    }
-    setScrollLock((prevState) => !prevState);
-    setisOpen((prevState) => !prevState);
-  };
+  // const functionCALL = () => {
+  //   if (scrollLock) {
+  //     document.body.style.overflowY = "auto";
+  //   } else {
+  //     document.body.style.overflowY = "hidden";
+  //   }
+  //   setScrollLock((prevState) => !prevState);
+  //   setisOpen((prevState) => !prevState);
+  // };
   const expDesign =
     "rounded-lg flex flex-col shadow-lg gap-2 pt-[4rem] pb-5  pl-5 pr-[5rem] font-medium transition-all duration-200 cursor-pointer hover:shadow-2xl hover:bg-gradient-to-tr from-gradientyfrom to-yellow";
 
@@ -33,14 +31,14 @@ const ProjectCard: React.FC<projectCard> = ({ role, date, description }) => {
       <AnimatePresence>
         {isOpen && (
           <ProjectCardMain
-            onClick={functionCALL}
+            onClick={() => setisOpen(!isOpen)}
             description={description}
             role={role}
             date={date}
           />
         )}
       </AnimatePresence>
-      <div onClick={functionCALL} className={`${expDesign}`}>
+      <div onClick={() => setisOpen(!isOpen)} className={`${expDesign}`}>
         <h1 className="text-lg">{role}</h1>
         <p className="text-[12px] font-thin">{date}</p>
         <p className={`${pDesign}`}>View More &rarr;</p>
