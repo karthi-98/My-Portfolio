@@ -5,7 +5,14 @@ const Footer = () => {
     <>
       <footer className="h-fit py-6 flex flex-col justify-center items-center">
         <h1 className="font-jost my-4">
-          Site hosted in <span className="text-gradientyfrom">AWS</span>
+          Site hosted in{" "}
+          <a
+            href="https://vercel.com/"
+            target="_blank"
+            className="text-gradientyfrom"
+          >
+            Vercel
+          </a>
         </h1>
         <h1 className="font-jost text-[#fff] flex items-center">
           Build using
