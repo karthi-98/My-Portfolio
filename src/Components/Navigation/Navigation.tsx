@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useCycle } from "framer-motion";
+import useFetch from "../../Hooks/useFetch";
 
 const Navigation = () => {
   const [mobileOpen, setmobileOpen] = useCycle(false, true);
+  const { fetchedData } = useFetch();
 
   const toggleMenuBar = () => {
     setmobileOpen();
@@ -66,10 +68,7 @@ const Navigation = () => {
       <section
         onClick={(e) => {
           e.preventDefault();
-          window.open(
-            "https://drive.google.com/file/d/1UulqpNT9TGkM9BMSWW0_GIYpm011VD4u/view?usp=drive_link",
-            "_blank"
-          );
+          window.open(fetchedData.google_drive_link, "_blank");
         }}
         className="flex gap-3 rounded-md bg-gradient-to-tr from-gradientyfrom to-yellow cursor-pointer px-4 py-2 items-center hover:border-solid"
       >

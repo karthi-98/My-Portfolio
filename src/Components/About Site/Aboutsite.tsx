@@ -1,7 +1,9 @@
 import React from "react";
 import Footer from "../Footer/Footer";
+import useFetch from "../../Hooks/useFetch";
 
 const Aboutsite = () => {
+  const { fetchedData } = useFetch();
   const packagesUsed = [
     {
       name: "TailwindCSS",
@@ -28,7 +30,7 @@ const Aboutsite = () => {
     },
     {
       name: "Download Resume",
-      url: "https://drive.google.com/file/d/1UulqpNT9TGkM9BMSWW0_GIYpm011VD4u/view",
+      url: fetchedData.google_drive_link,
     },
   ];
 
