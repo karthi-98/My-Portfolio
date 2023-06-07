@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const useFetch = () => {
   const [fetchedData, setFetchedData] = useState({
     google_drive_link:
-      "https://drive.google.com/file/d/132WqXI54DQ6jTpOMPm6pD14D0x99fFoj/view",
+      "https://filebin.net/iglmleibk1h2jtjp/Karthick_P_Resume_May_30.pdf",
   });
   useEffect(() => {
     async function fetchData() {

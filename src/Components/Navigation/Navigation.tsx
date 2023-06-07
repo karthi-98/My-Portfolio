@@ -4,7 +4,6 @@ import useFetch from "../../Hooks/useFetch";
 
 const Navigation = () => {
   const [mobileOpen, setmobileOpen] = useCycle(false, true);
-  const { fetchedData } = useFetch();
 
   const toggleMenuBar = () => {
     setmobileOpen();
@@ -68,7 +67,10 @@ const Navigation = () => {
       <section
         onClick={(e) => {
           e.preventDefault();
-          window.open(fetchedData.google_drive_link, "_blank");
+          window.open(
+            "https://filebin.net/iglmleibk1h2jtjp/Karthick_P_Resume_May_30.pdf",
+            "_blank"
+          );
         }}
         className="flex gap-3 rounded-md bg-gradient-to-tr from-gradientyfrom to-yellow cursor-pointer px-4 py-2 items-center hover:border-solid"
       >
